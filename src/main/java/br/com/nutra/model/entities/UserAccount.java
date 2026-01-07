@@ -35,9 +35,6 @@ public class UserAccount {
   @NotNull
   private Integer failedLoginAttempts;
 
-  @NotNull
-  private String role;
-
   @CreatedDate
   @Column(updatable = false)
   private LocalDateTime criadoEm;
@@ -48,13 +45,12 @@ public class UserAccount {
   public UserAccount() {
   }
 
-  public UserAccount(Integer id, String name, String email, String password,Integer failedLoginAttempts, String role) {
+  public UserAccount(Integer id, String name, String email, String password, Integer failedLoginAttempts) {
     this.id = id;
     this.name = name;
     this.email = email;
     this.password = password;
     this.failedLoginAttempts = failedLoginAttempts;
-    this.role = role;
   }
 
   public Integer getId() {
@@ -86,12 +82,6 @@ public class UserAccount {
   }
   public void setFailedLoginAttempts(Integer failedLoginAttempts) {
     this.failedLoginAttempts = failedLoginAttempts;
-  }
-  public String getRole() {
-    return role;
-  }
-  public void setRole(String role) {
-    this.role = role;
   }
   public LocalDateTime getCriadoEm() {
     return criadoEm;
